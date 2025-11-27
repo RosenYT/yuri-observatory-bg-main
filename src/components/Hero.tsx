@@ -34,16 +34,16 @@ const Hero = () => {
           <Telescope className="w-20 h-20 mx-auto mb-8 text-primary" strokeWidth={1.5} />
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent">
-          Обсерватория „Юрий Гагарин"
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent">
+          Център за подкрепа за личностно развитие – Астрономическа обсерватория „Юрий Гагарин"
         </h1>
         
         <p className="text-2xl md:text-3xl mb-4 text-foreground/90 font-light">
-          Нашият прозорец към Вселената
+          Първата народна астрономическа обсерватория в България
         </p>
         
         <p className="text-lg md:text-xl mb-12 text-muted-foreground max-w-2xl mx-auto">
-          Разкрийте тайните на космоса в първата народна астрономическа обсерватория в България
+          Разкрийте тайните на космоса и се потопете в богатата история на българската астрономия
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -52,7 +52,7 @@ const Hero = () => {
             className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 shadow-[var(--shadow-cosmic)]"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Открийте повече
+            Открий астрономията
           </Button>
           <Button 
             size="lg" 
@@ -60,7 +60,7 @@ const Hero = () => {
             className="text-lg px-8 py-6 border-2 border-primary/50 hover:bg-primary/10"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Посетете ни
+            Научи повече
           </Button>
         </div>
       </div>

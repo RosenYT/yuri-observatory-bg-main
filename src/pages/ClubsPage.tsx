@@ -26,16 +26,20 @@ const ClubsPage = () => {
                   <h2 className="text-3xl font-bold mb-4">За клуба</h2>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      Клуб „Гемма" е неправителствена организация, която осигурява силна обществена 
-                      подкрепа за дейността на Народната астрономическа обсерватория „Юрий Гагарин".
+                      Клубът е основан на 12 април 1996 година по инициатива на астрономите-любители 
+                      д-р Пламен Яковлиев, Петко Колев, Валентин Иванов и други ентусиасти. 
+                      Той е регистриран по Закона за сдруженията с нестопанска цел. 
+                      Председател на Клуба е Валентин Иванов.
                     </p>
                     <p>
-                      Членовете на клуба са астрономи-любители от различни възрасти, обединени от 
-                      общата страст към изследването на небето и популяризирането на космическата наука.
+                      Клуб 'Гемма' е организирана групация на астрономи-любители, които са страстни 
+                      поклонници на наблюдение на звездното небе, изучаване на небесни явления и 
+                      популяризиране на астрономията.
                     </p>
                     <p>
-                      Клубът играе ключова роля в организирането на образователни и обществени събития, 
-                      които правят астрономията достъпна за всички граждани на Стара Загора.
+                      Членовете на клуба имат достъп до уредите на обсерваторията и провеждат редовни 
+                      наблюдения и лекции. Клубът работи в тясно сътрудничество с персоналът на НАОП 
+                      и е центърът на любителската астрономическа дейност в Стара Загора.
                     </p>
                   </div>
                 </div>
@@ -49,55 +53,55 @@ const ClubsPage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]">
                 <BookOpen className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Наблюдателни сесии</h3>
+                <h3 className="text-xl font-semibold mb-3">Астрономически наблюдения</h3>
                 <p className="text-muted-foreground">
-                  Редовни наблюдения на небесни тела с телескопите на обсерваторията. 
-                  Изучаване на планети, звезди, галактики и други космически обекти.
+                  Редовни астрономически наблюдения на Луната, планети, звезди и други небесни обекти 
+                  през телескопите на обсерваторията.
                 </p>
               </Card>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]">
                 <Calendar className="w-12 h-12 text-accent mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Лекции и срещи</h3>
+                <h3 className="text-xl font-semibold mb-3">Публични сеанси</h3>
                 <p className="text-muted-foreground">
-                  Месечни срещи с презентации на актуални астрономически теми. 
-                  Гост-лектори от университети и научни институции.
+                  Организиране на насладителни сеанси за публично наблюдение през телескопи 
+                  за всички любители на астрономията.
                 </p>
               </Card>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]">
                 <Image className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Астрофотография</h3>
+                <h3 className="text-xl font-semibold mb-3">Лекции и семинари</h3>
                 <p className="text-muted-foreground">
-                  Обучение по астрономическа фотография. Споделяне на техники и оборудване 
-                  за заснемане на небесни обекти.
+                  Лекции и образователни семинари по астрономия и космонавтика, 
+                  участие в международни астрономически проекти и конференции.
                 </p>
               </Card>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]">
                 <Users2 className="w-12 h-12 text-accent mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Обществени събития</h3>
+                <h3 className="text-xl font-semibold mb-3">Метеорни наблюдения</h3>
                 <p className="text-muted-foreground">
-                  Организиране на публични наблюдения при специални астрономически явления 
-                  като затъмнения, метеорни дъждове и парад на планети.
+                  Докладване на резултатите от наблюдения на метеорни потоци и звездни явления 
+                  към съответните научни организации.
                 </p>
               </Card>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]">
                 <BookOpen className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Образователни програми</h3>
+                <h3 className="text-xl font-semibold mb-3">Работа с младежи</h3>
                 <p className="text-muted-foreground">
-                  Подкрепа за курсовете за астрономи-любители. Работилници за деца и младежи, 
-                  насочени към развиване на интерес към науката.
+                  Поддържане на живо интереса към космоса и астрономията в младежката среда 
+                  чрез образователни програми и практически занимания.
                 </p>
               </Card>
 
               <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-accent/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]">
                 <Calendar className="w-12 h-12 text-accent mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Експедиции</h3>
+                <h3 className="text-xl font-semibold mb-3">Сътрудничество</h3>
                 <p className="text-muted-foreground">
-                  Организиране на наблюдателни експедиции в тъмни локации извън града 
-                  за по-добра видимост на небесни обекти.
+                  Сътрудничество с други любителски и професионални астрономически организации 
+                  в България и чужбина.
                 </p>
               </Card>
             </div>
