@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { X } from "lucide-react";
 import { Timeline } from "@/components/ui/timeline";
 
 // Исторически снимки за времевата линия
@@ -10,6 +12,7 @@ import planetariumImg from "@/assets/timeline-planetarium-1978.jpg";
 import planetarium2023Img from "@/assets/timeline-planetarium-2023.jpg";
 
 const TimelineSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const data = [
     {
       title: "1957",
@@ -44,11 +47,12 @@ const TimelineSection = () => {
           <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
             <img
               src={astronautikaImg}
+              onClick={() => setSelectedImage(astronautikaImg)}
               alt="Занятие по ракетомоделизъм, 1960 г."
-              className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-              <p className="text-xs text-foreground/90">Теоретично занятие по ракетомоделизъм. Момчето е Кънчо Бонев – синът на Бончо Бонев.</p>
+              <p className="text-sm text-foreground/90 font-medium">Теоретично занятие по ракетомоделизъм. Момчето е Кънчо Бонев – синът на Бончо Бонев.</p>
             </div>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
@@ -75,21 +79,23 @@ const TimelineSection = () => {
             <div className="relative group overflow-hidden rounded-xl border border-border">
               <img
                 src={eclipseImg}
+                onClick={() => setSelectedImage(eclipseImg)}
                 alt="Слънчево затъмнение на връх Столетов, 15 февруари 1961 г."
-                className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-                <p className="text-xs text-foreground/90">Наблюдение на слънчевото затъмнение на връх Столетов, 15 февруари 1961 г.</p>
+                <p className="text-sm text-foreground/90 font-medium">Наблюдение на слънчевото затъмнение на връх Столетов, 15 февруари 1961 г.</p>
               </div>
             </div>
             <div className="relative group overflow-hidden rounded-xl border border-border">
               <img
                 src={openingImg}
+                onClick={() => setSelectedImage(openingImg)}
                 alt="Официално откриване на НАО, 26 февруари 1961 г."
-                className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-                <p className="text-xs text-foreground/90">Министър Начо Папазов прерязва лентата. Вляво е кметът Йордан Капсамунов, вдясно – проф. Никола Бонев.</p>
+                <p className="text-sm text-foreground/90 font-medium">Министър Начо Папазов прерязва лентата. Вляво е кметът Йордан Капсамунов, вдясно – проф. Никола Бонев.</p>
               </div>
             </div>
           </div>
@@ -102,8 +108,9 @@ const TimelineSection = () => {
           <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
             <img
               src={gagarinImg}
+              onClick={() => setSelectedImage(gagarinImg)}
               alt="Юрий Гагарин в Стара Загора, 26 май 1961 г."
-              className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
               <p className="text-sm text-foreground/90 font-medium">Юрий Гагарин на летището в Стара Загора, 26 май 1961 г. – първото му посещение извън СССР.</p>
@@ -137,8 +144,9 @@ const TimelineSection = () => {
           <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-xs mx-auto">
             <img
               src={vtoriBairImg}
+              onClick={() => setSelectedImage(vtoriBairImg)}
               alt="Бончо Бонев с телескопа Куде-рефрактор, 1968 г."
-              className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
               <p className="text-sm text-foreground/90 font-medium">Бончо Бонев под купола на Куде-рефрактора в извънградската база на обсерваторията на Втория баир</p>
@@ -181,8 +189,9 @@ const TimelineSection = () => {
           <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
             <img
               src={planetariumImg}
+              onClick={() => setSelectedImage(planetariumImg)}
               alt="Откриване на планетариума, 3 ноември 1978 г."
-              className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
               <p className="text-sm text-foreground/90 font-medium">Астрономи-любители около уреда планетариум на откриването, 3 ноември 1978 г.</p>
@@ -263,8 +272,9 @@ const TimelineSection = () => {
           <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
             <img
               src={planetarium2023Img}
+              onClick={() => setSelectedImage(planetarium2023Img)}
               alt="Новият цифров планетариум, декември 2023 г."
-              className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-primary/20 transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
               <p className="text-sm text-foreground/90 font-medium">Клуб „Гемма" в новия цифров планетариум, декември 2023 г.</p>
@@ -282,7 +292,32 @@ const TimelineSection = () => {
     },
   ];
 
-  return <Timeline data={data} />;
+  return (
+    <>
+      <Timeline data={data} />
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-2 -right-2 md:top-4 md:right-4 p-2 bg-black/50 hover:bg-primary rounded-full text-white transition-colors z-50 backdrop-blur-md border border-white/10"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Full view"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default TimelineSection;

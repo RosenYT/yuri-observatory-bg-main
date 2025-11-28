@@ -1,68 +1,66 @@
 import { Button } from "@/components/ui/button";
-import { Telescope } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-observatory.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image with overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
-      </div>
-
-      {/* Animated stars */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-foreground rounded-full animate-twinkle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent"></div>
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 text-center">
-        <div className="animate-float">
-          <Telescope className="w-20 h-20 mx-auto mb-8 text-primary" strokeWidth={1.5} />
-        </div>
-        
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent">
-          Център за подкрепа за личностно развитие – Астрономическа обсерватория „Юрий Гагарин"
-        </h1>
-        
-        <p className="text-2xl md:text-3xl mb-4 text-foreground/90 font-light">
-          Първата народна астрономическа обсерватория в България
-        </p>
-        
-        <p className="text-lg md:text-xl mb-12 text-muted-foreground max-w-2xl mx-auto">
-          Разкрийте тайните на космоса и се потопете в богатата история на българската астрономия
-        </p>
+      <div className="container relative z-10 mx-auto px-6 py-20">
+        <div className="max-w-3xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="text-sm text-primary font-medium">Основана 1959 г.</span>
+          </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 shadow-[var(--shadow-cosmic)]"
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Открий астрономията
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="text-lg px-8 py-6 border-2 border-primary/50 hover:bg-primary/10"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Научи повече
-          </Button>
+          {/* Title */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-foreground">Обсерватория</span>
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+              „Юрий Гагарин"
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+            Първата народна астрономическа обсерватория в България — прозорец към Вселената от над 60 години.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4">
+            <Button
+              size="lg"
+              className="px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              onClick={() => document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Разгледай обсерваторията
+            </Button>
+          </div>
         </div>
+      </div>
+
+      {/* Scroll indicator - mouse */}
+      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10">
+        <button
+          onClick={() => document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' })}
+          className="group"
+          aria-label="Scroll down"
+        >
+          <div className="w-7 h-12 rounded-full border-2 border-foreground/40 group-hover:border-foreground transition-colors flex justify-center pt-2">
+            <div className="w-1.5 h-3 bg-foreground/60 group-hover:bg-foreground rounded-full animate-scroll-mouse"></div>
+          </div>
+        </button>
       </div>
     </section>
   );

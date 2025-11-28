@@ -1,6 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Users2, BookOpen, Calendar, Image } from "lucide-react";
 import Footer from "@/components/Footer";
+import clubGemmaImg from "@/assets/clubs/gemma-club-2023.jpg";
+import observation1Img from "@/assets/clubs/observation-1.jpg";
+import observation2Img from "@/assets/clubs/observation-2.jpg";
+import observation3Img from "@/assets/clubs/observation-3.jpg";
 
 const ClubsPage = () => {
   return (
@@ -19,11 +23,13 @@ const ClubsPage = () => {
 
           {/* About the Club */}
           <div className="mb-16">
-            <Card className="p-8 lg:p-12 bg-gradient-to-br from-primary/10 to-accent/5 border-primary/30">
-              <div className="flex items-start gap-6 mb-6">
-                <Users2 className="w-16 h-16 text-primary flex-shrink-0" />
-                <div>
-                  <h2 className="text-3xl font-bold mb-4">За клуба</h2>
+            <Card className="overflow-hidden bg-gradient-to-br from-primary/10 to-accent/5 border-primary/30">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-6">
+                    <Users2 className="w-10 h-10 text-primary" />
+                    <h2 className="text-3xl font-bold">За клуба</h2>
+                  </div>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
                       Клубът е основан на 12 април 1996 година по инициатива на астрономите-любители 
@@ -42,6 +48,14 @@ const ClubsPage = () => {
                       и е центърът на любителската астрономическа дейност в Стара Загора.
                     </p>
                   </div>
+                </div>
+                <div className="h-full min-h-[300px] relative group">
+                  <img 
+                    src={clubGemmaImg} 
+                    alt="Членовете на Клуб Гемма" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
                 </div>
               </div>
             </Card>
@@ -150,21 +164,21 @@ const ClubsPage = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="aspect-[4/3] rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=800&q=80"
+                  src={observation1Img}
                   alt="Наблюдение с телескоп"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-[4/3] rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&w=800&q=80"
+                  src={observation2Img}
                   alt="Нощно небе"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-[4/3] rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
                 <img
-                  src="https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?auto=format&fit=crop&w=800&q=80"
+                  src={observation3Img}
                   alt="Млечен път"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
