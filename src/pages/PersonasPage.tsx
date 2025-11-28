@@ -4,6 +4,77 @@ import Footer from "@/components/Footer";
 import bonchoBonevImg from "@/assets/personas/boncho-bonev.jpg";
 import nikolaBonevImg from "@/assets/personas/nikola-bonev.jpg";
 import mitkoGogoshevImg from "@/assets/personas/mitko-gogoshev.jpg";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+const PersonaCard = ({ persona, index }: { persona: any, index: number }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <Card
+      className="overflow-hidden bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)] p-6 sm:p-8"
+    >
+      <div className="clearfix">
+        <div className={`
+          mb-6 w-full sm:w-1/2 lg:w-1/3 relative z-10
+          ${index % 2 === 0 ? 'lg:float-left lg:mr-8' : 'lg:float-right lg:ml-8'}
+        `}>
+          <img
+            src={persona.image}
+            alt={persona.name}
+            className="w-full h-auto rounded-xl shadow-md"
+          />
+        </div>
+
+        <div className="flex items-start gap-4 mb-6">
+          <persona.icon className="w-12 h-12 text-primary flex-shrink-0 mt-1" />
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold leading-tight">{persona.name}</h2>
+            <p className="text-lg text-accent">{persona.role}</p>
+            <p className="text-sm text-muted-foreground">{persona.years}</p>
+          </div>
+        </div>
+
+        <div className="space-y-4 text-muted-foreground leading-relaxed text-justify mb-8">
+          {isExpanded ? (
+            persona.biography.map((paragraph: string, pIndex: number) => (
+              <p key={pIndex}>{paragraph}</p>
+            ))
+          ) : (
+            <p>{persona.biography[0]}</p>
+          )}
+        </div>
+
+        {isExpanded && (
+          <div className="bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl p-6 border border-primary/20 clear-both mb-6">
+            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <Award className="w-6 h-6 text-accent" />
+              Постижения
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {persona.achievements.map((achievement: string, aIndex: number) => (
+                <li key={aIndex} className="flex items-start gap-2 text-muted-foreground text-sm sm:text-base">
+                  <span className="text-primary mt-1.5">•</span>
+                  <span>{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="flex justify-center clear-both mt-4">
+          <Button 
+            onClick={() => setIsExpanded(!isExpanded)}
+            variant="outline"
+            className="border-primary/50 hover:bg-primary/10"
+          >
+            {isExpanded ? "Скрий информация" : "Повече информация"}
+          </Button>
+        </div>
+      </div>
+    </Card>
+  );
+};
 
 const PersonasPage = () => {
   const personas = [
@@ -108,57 +179,9 @@ const PersonasPage = () => {
             </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             {personas.map((persona, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[var(--shadow-cosmic)]"
-              >
-                <div className={`grid lg:grid-cols-2 gap-8 ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-                  <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
-                        src={persona.image}
-                        alt={persona.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-4 mb-6">
-                      <persona.icon className="w-12 h-12 text-primary" />
-                      <div>
-                        <h2 className="text-3xl font-bold">{persona.name}</h2>
-                        <p className="text-lg text-accent">{persona.role}</p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4 mb-6">
-                      {persona.biography.map((paragraph, pIndex) => (
-                        <p key={pIndex} className="text-muted-foreground leading-relaxed">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-
-                    <div className="bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl p-6 border border-primary/20">
-                      <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                        <Award className="w-6 h-6 text-accent" />
-                        Постижения
-                      </h3>
-                      <ul className="space-y-2">
-                        {persona.achievements.map((achievement, aIndex) => (
-                          <li key={aIndex} className="flex items-start gap-2 text-muted-foreground">
-                            <span className="text-primary mt-1">•</span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              <PersonaCard key={index} persona={persona} index={index} />
             ))}
           </div>
         </div>

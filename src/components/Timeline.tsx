@@ -36,7 +36,7 @@ const TimelineSection = () => {
     {
       title: "1960",
       content: (
-        <div>
+        <div className="clearfix">
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             <span className="font-bold text-lg md:text-xl block mb-2">Основаване на Секция Астронавтика в Стара Загора</span>
             На 13 март 1960 г. със съдействието на проф. Никола Бонев е основана секция Астронавтика – първият
@@ -44,15 +44,17 @@ const TimelineSection = () => {
             е Бончо Кънчев Бонев (р. 4 май 1917 г. в Малка Верея), дългогодишен сътрудник на ДОСО, радиолюбител
             и конструктор на първите радиоприемници в града, ръководител на секцията по ракетомоделизъм.
           </p>
-          <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
-            <img
-              src={astronautikaImg}
-              onClick={() => setSelectedImage(astronautikaImg)}
-              alt="Занятие по ракетомоделизъм, 1960 г."
-              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-              <p className="text-sm text-foreground/90 font-medium">Теоретично занятие по ракетомоделизъм. Момчето е Кънчо Бонев – синът на Бончо Бонев.</p>
+          <div className="mb-4 w-full sm:w-2/3 lg:w-1/2 relative z-10 float-none sm:float-right sm:ml-6">
+            <div className="relative group overflow-hidden rounded-xl border border-border">
+              <img
+                src={astronautikaImg}
+                onClick={() => setSelectedImage(astronautikaImg)}
+                alt="Занятие по ракетомоделизъм, 1960 г."
+                className="w-full h-auto rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
+                <p className="text-sm text-foreground/90 font-medium">Теоретично занятие по ракетомоделизъм. Момчето е Кънчо Бонев – синът на Бончо Бонев.</p>
+              </div>
             </div>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
@@ -68,23 +70,24 @@ const TimelineSection = () => {
     {
       title: "1961",
       content: (
-        <div>
-          <p className="text-foreground text-xs md:text-sm font-normal mb-4">
+        <div className="clearfix">
+          <p className="text-foreground text-xs md:text-sm font-normal mb-6">
             <span className="font-bold text-lg md:text-xl block mb-2">Откриване на първата народна обсерватория в България</span>
             На 15 февруари 1961 г., само дни преди официалното откриване, на връх Столетов екип от астрономи-любители,
             ръководен от първия щатен астроном Величка Драганова, наблюдава пълно слънчево затъмнение. Резултатите
             от наблюдението на слънчевата корона са регистрирани в архива на БАН.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="relative group overflow-hidden rounded-xl border border-border">
               <img
                 src={eclipseImg}
                 onClick={() => setSelectedImage(eclipseImg)}
                 alt="Слънчево затъмнение на връх Столетов, 15 февруари 1961 г."
-                className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
+                className="w-full aspect-video object-cover rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-                <p className="text-sm text-foreground/90 font-medium">Наблюдение на слънчевото затъмнение на връх Столетов, 15 февруари 1961 г.</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 via-background/60 to-transparent p-4 pt-8">
+                <p className="text-xs sm:text-sm text-foreground/90 font-medium">Наблюдение на слънчевото затъмнение на връх Столетов, 15 февруари 1961 г.</p>
               </div>
             </div>
             <div className="relative group overflow-hidden rounded-xl border border-border">
@@ -92,30 +95,35 @@ const TimelineSection = () => {
                 src={openingImg}
                 onClick={() => setSelectedImage(openingImg)}
                 alt="Официално откриване на НАО, 26 февруари 1961 г."
-                className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
+                className="w-full aspect-video object-cover rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-3">
-                <p className="text-sm text-foreground/90 font-medium">Министър Начо Папазов прерязва лентата. Вляво е кметът Йордан Капсамунов, вдясно – проф. Никола Бонев.</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 via-background/60 to-transparent p-4 pt-8">
+                <p className="text-xs sm:text-sm text-foreground/90 font-medium">Министър Начо Папазов прерязва лентата. Вляво е кметът Йордан Капсамунов, вдясно – проф. Никола Бонев.</p>
               </div>
             </div>
           </div>
+
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             На 26 февруари 1961 г. в двора на училище „Иван Вазов" (сега ГПЧЕ „Ромен Ролан") е официално открита
             Първата в България Народна астрономическа обсерватория. Лентата прерязва министърът на просветата
             и културата Начо Папазов. На церемонията присъстват проф. Никола Бонев, председателят на Общинския
             съвет Йордан Капсамунов и множество ентусиасти.
           </p>
-          <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
-            <img
-              src={gagarinImg}
-              onClick={() => setSelectedImage(gagarinImg)}
-              alt="Юрий Гагарин в Стара Загора, 26 май 1961 г."
-              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
-              <p className="text-sm text-foreground/90 font-medium">Юрий Гагарин на летището в Стара Загора, 26 май 1961 г. – първото му посещение извън СССР.</p>
+          
+          <div className="mb-4 w-full sm:w-2/3 lg:w-1/2 relative z-10 float-none sm:float-left sm:mr-6 mt-6">
+            <div className="relative group overflow-hidden rounded-xl border border-border">
+              <img
+                src={gagarinImg}
+                onClick={() => setSelectedImage(gagarinImg)}
+                alt="Юрий Гагарин в Стара Загора, 26 май 1961 г."
+                className="w-full h-auto rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                <p className="text-sm text-foreground/90 font-medium">Юрий Гагарин на летището в Стара Загора, 26 май 1961 г.</p>
+              </div>
             </div>
           </div>
+
           <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
             На 12 април 1961 г. Юрий Гагарин става първият човек в космоса. Само месец и половина по-късно,
             на 26 май 1961 г., първият космонавт на планетата посещава Стара Загора – това е първото му посещение
@@ -134,24 +142,26 @@ const TimelineSection = () => {
     {
       title: "1965-1968",
       content: (
-        <div>
+        <div className="clearfix">
+          <div className="mb-4 w-full sm:w-1/2 lg:w-1/3 relative z-10 float-none sm:float-right sm:ml-6">
+            <div className="relative group overflow-hidden rounded-xl border border-border">
+              <img
+                src={vtoriBairImg}
+                onClick={() => setSelectedImage(vtoriBairImg)}
+                alt="Бончо Бонев с телескопа Куде-рефрактор, 1968 г."
+                className="w-full h-auto rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                <p className="text-sm text-foreground/90 font-medium">Бончо Бонев под купола на Куде-рефрактора</p>
+              </div>
+            </div>
+          </div>
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             <span className="font-bold text-lg md:text-xl block mb-2">Изграждане на нова база на Втория баир</span>
             На 5 км северно от гр. Стара Загора, след системни проучвания на астроклимата с цел изграждане
             на национална обсерватория, започва построяването на нова база. Сградата е изградена с постоянното
             участие на щатния състав и доброволния труд на астрономите-любители.
           </p>
-          <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-xs mx-auto">
-            <img
-              src={vtoriBairImg}
-              onClick={() => setSelectedImage(vtoriBairImg)}
-              alt="Бончо Бонев с телескопа Куде-рефрактор, 1968 г."
-              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
-              <p className="text-sm text-foreground/90 font-medium">Бончо Бонев под купола на Куде-рефрактора в извънградската база на обсерваторията на Втория баир</p>
-            </div>
-          </div>
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             Построена е модерна база със съответни работни кабинети, апаратна, лаборатория и кула с диаметър 5 м
             с въртящ се купол за телескопа Куде-рефрактор 200/3000 на „Карл Цайс", ГДР – уред идеален за фотографски
@@ -174,7 +184,20 @@ const TimelineSection = () => {
     {
       title: "1974-1978",
       content: (
-        <div>
+        <div className="clearfix">
+          <div className="mb-4 w-full sm:w-2/3 lg:w-1/2 relative z-10 float-none sm:float-left sm:mr-6">
+            <div className="relative group overflow-hidden rounded-xl border border-border">
+              <img
+                src={planetariumImg}
+                onClick={() => setSelectedImage(planetariumImg)}
+                alt="Откриване на планетариума, 3 ноември 1978 г."
+                className="w-full h-auto rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                <p className="text-sm text-foreground/90 font-medium">Астрономи-любители около уреда планетариум, 1978 г.</p>
+              </div>
+            </div>
+          </div>
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             <span className="font-bold text-lg md:text-xl block mb-2">Преобразуване и откриване на планетариум</span>
             През 1974 г. с решение на Министерски съвет обсерваторията на Втория баир преминава към БАН като
@@ -184,19 +207,8 @@ const TimelineSection = () => {
           </p>
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             През 1977 г. със средства от бюджета на Стара Загора от Пловдивския панаир се закупува планетариум
-            тип ZKP-2 на заводите „Карл Цайс", Йена.
+            тип ZKP-2 на заводите „Карл Цайс".
           </p>
-          <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
-            <img
-              src={planetariumImg}
-              onClick={() => setSelectedImage(planetariumImg)}
-              alt="Откриване на планетариума, 3 ноември 1978 г."
-              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
-              <p className="text-sm text-foreground/90 font-medium">Астрономи-любители около уреда планетариум на откриването, 3 ноември 1978 г.</p>
-            </div>
-          </div>
           <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
             На 3 ноември 1978 г. официално е открита Народна астрономическа обсерватория с Планетариум (НАОП)
             „Юрий Гагарин". Върху 6-метровия свободно висящ купол – новост в световната практика, спестила
@@ -263,23 +275,25 @@ const TimelineSection = () => {
     {
       title: "2023",
       content: (
-        <div>
+        <div className="clearfix">
+          <div className="mb-4 w-full sm:w-2/3 lg:w-1/2 relative z-10 float-none sm:float-right sm:ml-6">
+            <div className="relative group overflow-hidden rounded-xl border border-border">
+              <img
+                src={planetarium2023Img}
+                onClick={() => setSelectedImage(planetarium2023Img)}
+                alt="Новият цифров планетариум, декември 2023 г."
+                className="w-full h-auto rounded-xl shadow-md transition-transform duration-500 scale-105 group-hover:scale-110 cursor-pointer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                <p className="text-sm text-foreground/90 font-medium">Клуб „Гемма" в новия цифров планетариум</p>
+              </div>
+            </div>
+          </div>
           <p className="text-foreground text-xs md:text-sm font-normal mb-4">
             <span className="font-bold text-lg md:text-xl block mb-2">Нов цифров планетариум</span>
             На 14 декември 2023 г. е официално открит новият цифров планетариум. Към абревиатурата отново
             се добавя П – Планетариум, така че институцията е НАОП „Юрий Гагарин".
           </p>
-          <div className="relative group overflow-hidden rounded-xl border border-border my-6 max-w-lg mx-auto">
-            <img
-              src={planetarium2023Img}
-              onClick={() => setSelectedImage(planetarium2023Img)}
-              alt="Новият цифров планетариум, декември 2023 г."
-              className="w-full h-auto object-cover transition-transform duration-500 scale-110 group-hover:scale-115 cursor-pointer"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
-              <p className="text-sm text-foreground/90 font-medium">Клуб „Гемма" в новия цифров планетариум, декември 2023 г.</p>
-            </div>
-          </div>
           <p className="text-muted-foreground text-xs md:text-sm font-normal mb-4">
             Днес обсерваторията разполага с 3 съвременни телескопа за любителски наблюдения и продължава
             да популяризира астрономията и космонавтиката. Участва в световни проекти: Нощ на Гагарин

@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Timeline from "@/components/Timeline";
-import { Card } from "@/components/ui/card";
 import { Telescope, Award } from "lucide-react";
 import medalImage from "@/assets/medal.jpg";
 import observatoryImage from "@/assets/observatory.jpg";
@@ -11,72 +10,6 @@ const Home = () => {
     <div className="min-h-screen pt-16">
       <Hero />
       
-      {/* Famous Astronomy Facts */}
-      <section className="py-20 px-4 bg-gradient-to-b from-background to-secondary/10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Интересни факти за Вселената
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8"></div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
-              <div className="flex gap-3">
-                <span className="text-primary text-2xl flex-shrink-0">✦</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Грандиозното Слънце</h3>
-                  <p className="text-muted-foreground">
-                    Слънцето е така голямо, че около него могат да орбитират 1,3 милиона Земи. 
-                    То е отговорно за абсолютно цялата енергия в нашата слънчева система.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
-              <div className="flex gap-3">
-                <span className="text-accent text-2xl flex-shrink-0">✦</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Отдалечаващата се Луна</h3>
-                  <p className="text-muted-foreground">
-                    Луната постепенно се отдалечава от Земята с около 3,8 см на година. 
-                    За милиарди години тя ще завърши орбитата си далеч от планетата ни.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
-              <div className="flex gap-3">
-                <span className="text-primary text-2xl flex-shrink-0">✦</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Денят на Венера</h3>
-                  <p className="text-muted-foreground">
-                    На Венера един ден (период на въртене) трае 243 земни дни, което е дори 
-                    по-дълго от нейната орбита около Слънцето (225 земни дни).
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
-              <div className="flex gap-3">
-                <span className="text-accent text-2xl flex-shrink-0">✦</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Безброй звезди</h3>
-                  <p className="text-muted-foreground">
-                    В Млечния път има между 100 и 200 милиарда звезди, но има галактики с над 
-                    100 трилиона звезди. Всяка една е потенциално център на система от планети.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Observatory Summary */}
       <section id="summary" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -155,17 +88,15 @@ const Home = () => {
               />
             </div>
           </div>
-
-          <Card className="p-8 mt-16 bg-gradient-to-br from-primary/10 to-accent/5 border-primary/30 text-center max-w-4xl mx-auto">
-            <h4 className="text-2xl font-semibold mb-4 text-foreground">Основна цел на обсерваторията</h4>
-            <p className="text-foreground/90 leading-relaxed italic text-lg">
-              "Раздвижване на знанията по астрономия и космонавтика, разпространение на научни знания сред всички 
-              слоеве на население, обучение на нови поколения астрономи-любители и популяризиране на постиженията 
-              на съвременната наука."
-            </p>
-          </Card>
         </div>
       </section>
+
+      <div className="text-center mb-1">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            История на обсерваторията
+          </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8"></div>
+      </div>
 
       {/* Timeline */}
       <Timeline />

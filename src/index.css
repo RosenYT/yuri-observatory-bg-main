@@ -109,3 +109,11 @@ All colors MUST be HSL.
     animation: float 6s ease-in-out infinite;
   }
 }
+
+@layer utilities {
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
